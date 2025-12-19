@@ -95,13 +95,13 @@
 			board.style.display = "grid";
 			message.style.display = "block";
 
-			message.innerText = `${player1}, you're up`;
+			message.innerText = `Player1, you're up`;
 		});
 
 	 
 		// STEP 1: state variables
 		let players = [];
-		let currentMark = "X";
+		let currentMark = "x";
 		let boardState = Array(9).fill("");
 		let gameActive = false;
 
@@ -121,14 +121,14 @@
 				cell.innerText = currentMark;
 
 				if (checkWin()) {
-					const winnerName = currentMark === "X" ? players[0] : players[1];
-					message.innerText = `${winnerName}, congratulations you won!`;
+					const winnerName = currentMark === "x" ? "Player1" : "Player2";
+					message.innerText = `${winnerName} congratulations you won!`;
 					gameActive = false;
 					return;
 				}
 
-				currentMark = currentMark === "X" ? "O" : "X";
-				const nextPlayerName = currentMark === "X" ? players[0] : players[1];
+				currentMark = currentMark === "x" ? "o" : "x";
+				const nextPlayerName = currentMark === "x" ? "Player1" : "Player2";
 				message.innerText = `${nextPlayerName}, you're up`;
 			});
 		});
